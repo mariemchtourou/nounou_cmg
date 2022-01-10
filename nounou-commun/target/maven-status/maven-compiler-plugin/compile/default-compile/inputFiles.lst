@@ -1,0 +1,12 @@
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\service\IServiceCategorie.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\dto\DtoCompte.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\dto\DtoCategorie.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\dto\DtoTelephone.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\exception\ExceptionPermission.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\service\IServiceConnexion.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\dto\Roles.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\dto\DtoPersonne.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\exception\ExceptionAnomaly.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\service\IServicePersonne.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\exception\ExceptionValidation.java
+Z:\Projet-JEE\nounou\nounou-commun\src\main\java\nounou\commun\service\IServiceCompte.java

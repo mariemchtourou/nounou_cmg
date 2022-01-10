@@ -1,0 +1,17 @@
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServicePersonne.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoTelephone.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\jpa\DaoCompte.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Categorie.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServiceConnexion.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoPersonne.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Telephone.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoRole.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\jpa\DaoPersonne.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\mapper\IMapperEjb.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServiceCategorie.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoCategorie.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServiceCompte.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\jpa\DaoCategorie.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Personne.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoCompte.java
+Z:\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Compte.java
