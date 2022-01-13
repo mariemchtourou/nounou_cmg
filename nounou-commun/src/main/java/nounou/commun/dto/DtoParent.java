@@ -8,64 +8,71 @@ import java.util.List;
 public class DtoParent implements Serializable {
 
 	// Champs
-	
-		private int				IdCompte;
-		
-		private String			NomParents;
-		
-		private String			Adresse;
-		
-		private int	Telephone;
-		
-		private List<DtoContrat>	contrats = new ArrayList<>();
-		
-		public DtoParent() {
-			
-		}
+	private int IdParent;
 
-		public DtoParent(String nomParents, String adresse, int telephone) {
-			super();
-			NomParents = nomParents;
-			Adresse = adresse;
-			Telephone = telephone;
-		}
+	private int IdCompte;
 
-		public int getIdCompte() {
-			return IdCompte;
-		}
+	private String NomParents;
 
-		public String getNomParents() {
-			return NomParents;
-		}
+	private String Adresse;
 
-		public void setNomParents(String nomParents) {
-			NomParents = nomParents;
-		}
+	private int Telephone;
 
-		public String getAdresse() {
-			return Adresse;
-		}
+	private List<DtoContrat> contrats = new ArrayList<>();
 
-		public void setAdresse(String adresse) {
-			Adresse = adresse;
-		}
+	public DtoParent() {
 
-		public int getTelephone() {
-			return Telephone;
-		}
+	}
 
-		public void setTelephone(int telephone) {
-			Telephone = telephone;
-		}
+	public DtoParent(String nomParents, String adresse, int telephone) {
+		super();
+		NomParents = nomParents;
+		Adresse = adresse;
+		Telephone = telephone;
+	}
 
-		public List<DtoContrat> getContrats() {
-			return contrats;
-		}
+	public int getIdParent() {
+		return IdParent;
+	}
 
-		public void setContrats(List<DtoContrat> contrats) {
-			this.contrats = contrats;
-		}
-		
-		
-		
+	public void setIdParent(int idParent) {
+		IdParent = idParent;
+	}
+
+	public int getIdCompte() {
+		return IdCompte;
+	}
+
+	public String getNomParents() {
+		return NomParents;
+	}
+
+	public void setNomParents(String nomParents) {
+		NomParents = nomParents;
+	}
+
+	public String getAdresse() {
+		return Adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		Adresse = adresse;
+	}
+
+	public int getTelephone() {
+		return Telephone;
+	}
+
+	public void setTelephone(int telephone) {
+		Telephone = telephone;
+	}
+
+	public List<DtoContrat> getContrats() {
+		return contrats;
+	}
+
+	public void setContrats(List<DtoContrat> contrats) {
+		this.contrats = contrats;
+	}
+
 }

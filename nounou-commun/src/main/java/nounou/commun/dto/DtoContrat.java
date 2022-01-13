@@ -7,113 +7,112 @@ import java.sql.Date;
 public class DtoContrat implements Serializable {
 
 	// Champs
-			
-			private int				IdContrat;
-			
-			private int				IdCompte;
-			
-			private String			Nom;
-			
-			private String			Prenom;
-			
-			private Date			DateDeNaissance;
-			
-			private	Float 			Tarif;
-			
-			private	Float 			IndemEnt;
-			
-			private	Float 			IndemRep;
-			
-			private	Boolean 		Actif;
-			
+
+	private int IdContrat;
+
+	private int IdParent;
+
+	private String Nom;
+
+	private String Prenom;
+
+	private Date DateDeNaissance;
+
+	private Float Tarif;
+
+	private Float IndemEnt;
+
+	private Float IndemRep;
+
+	private Boolean Actif;
+
 	// Constructors
-			
-			public DtoContrat() {
-				
-			}
 
-			public DtoContrat(int idCompte, String nom, String prenom, Date dateDeNaissance, Float tarif, Float indemEnt,
-					Float indemRep, Boolean actif) {
-				super();
-				IdCompte = idCompte;
-				Nom = nom;
-				Prenom = prenom;
-				DateDeNaissance = dateDeNaissance;
-				Tarif = tarif;
-				IndemEnt = indemEnt;
-				IndemRep = indemRep;
-				Actif = actif;
-			}
-			
+	public DtoContrat() {
+
+	}
+
+	public DtoContrat(int idParent, String nom, String prenom, Date dateDeNaissance, Float tarif, Float indemEnt,
+			Float indemRep, Boolean actif) {
+		super();
+		IdParent = idParent;
+		Nom = nom;
+		Prenom = prenom;
+		DateDeNaissance = dateDeNaissance;
+		Tarif = tarif;
+		IndemEnt = indemEnt;
+		IndemRep = indemRep;
+		Actif = actif;
+	}
+
 	// Getters and Setters
-			
-			public int getIdContrat() {
-				return IdContrat;
-			}
 
-			public int getIdCompte() {
-				return IdCompte;
-			}
+	public int getIdContrat() {
+		return IdContrat;
+	}
 
-			public void setIdCompte(int idCompte) {
-				IdCompte = idCompte;
-			}
+	public int getIdParent() {
+		return IdParent;
+	}
 
-			public String getNom() {
-				return Nom;
-			}
+	public void setIdParent(int idParent) {
+		IdParent = idParent;
+	}
 
-			public void setNom(String nom) {
-				Nom = nom;
-			}
+	public String getNom() {
+		return Nom;
+	}
 
-			public String getPrenom() {
-				return Prenom;
-			}
+	public void setNom(String nom) {
+		Nom = nom;
+	}
 
-			public void setPrenom(String prenom) {
-				Prenom = prenom;
-			}
+	public String getPrenom() {
+		return Prenom;
+	}
 
-			public Date getDateDeNaissance() {
-				return DateDeNaissance;
-			}
+	public void setPrenom(String prenom) {
+		Prenom = prenom;
+	}
 
-			public void setDateDeNaissance(Date dateDeNaissance) {
-				DateDeNaissance = dateDeNaissance;
-			}
+	public Date getDateDeNaissance() {
+		return DateDeNaissance;
+	}
 
-			public Float getTarif() {
-				return Tarif;
-			}
+	public void setDateDeNaissance(Date dateDeNaissance) {
+		DateDeNaissance = dateDeNaissance;
+	}
 
-			public void setTarif(Float tarif) {
-				Tarif = tarif;
-			}
+	public Float getTarif() {
+		return Tarif;
+	}
 
-			public Float getIndemEnt() {
-				return IndemEnt;
-			}
+	public void setTarif(Float tarif) {
+		Tarif = tarif;
+	}
 
-			public void setIndemEnt(Float indemEnt) {
-				IndemEnt = indemEnt;
-			}
+	public Float getIndemEnt() {
+		return IndemEnt;
+	}
 
-			public Float getIndemRep() {
-				return IndemRep;
-			}
+	public void setIndemEnt(Float indemEnt) {
+		IndemEnt = indemEnt;
+	}
 
-			public void setIndemRep(Float indemRep) {
-				IndemRep = indemRep;
-			}
+	public Float getIndemRep() {
+		return IndemRep;
+	}
 
-			public Boolean getActif() {
-				return Actif;
-			}
+	public void setIndemRep(Float indemRep) {
+		IndemRep = indemRep;
+	}
 
-			public void setActif(Boolean actif) {
-				Actif = actif;
-			}
-			
-			
+	public Boolean getActif() {
+		return Actif;
+	}
+
+	public void setActif(Boolean actif) {
+		Actif = actif;
+	}
+
 }
