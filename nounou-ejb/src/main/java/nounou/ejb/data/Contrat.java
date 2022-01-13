@@ -54,9 +54,6 @@ public class Contrat {
 	@Column( name = "actif" )
 	private	Boolean 		Actif;
 	
-	@OneToMany( mappedBy = "IdContrat", cascade = ALL, orphanRemoval = true  )
-	private List<Garde>	gardes = new ArrayList<>();
-	
 	// Constructors
 	
 				public Contrat() {
@@ -146,14 +143,6 @@ public class Contrat {
 					Actif = actif;
 				}
 				
-				public List<Garde> getGardes() {
-					return gardes;
-				}
-
-				public void setGardes(List<Garde> gardes) {
-					this.gardes = gardes;
-				}
-
 				@Override
 				public int hashCode() {
 					return Objects.hash(Actif, DateDeNaissance, IdParent, IdContrat, IndemEnt, IndemRep, Nom, Prenom,
