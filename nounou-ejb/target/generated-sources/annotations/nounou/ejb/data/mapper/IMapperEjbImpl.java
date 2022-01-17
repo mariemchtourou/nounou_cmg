@@ -15,7 +15,7 @@ import nounou.ejb.data.Telephone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-11T15:27:55+0100",
+    date = "2022-01-17T12:07:50+0100",
     comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 15.0.2 (Oracle Corporation)"
 )
 @ApplicationScoped
@@ -29,10 +29,10 @@ public class IMapperEjbImpl implements IMapperEjb {
 
         Compte compte = new Compte();
 
-        compte.setId( source.getId() );
-        compte.setPseudo( source.getPseudo() );
-        compte.setMotDePasse( source.getMotDePasse() );
         compte.setEmail( source.getEmail() );
+        compte.setId( source.getId() );
+        compte.setMotDePasse( source.getMotDePasse() );
+        compte.setPseudo( source.getPseudo() );
         List<String> list = source.getRoles();
         if ( list != null ) {
             compte.setRoles( new ArrayList<String>( list ) );
@@ -97,10 +97,10 @@ public class IMapperEjbImpl implements IMapperEjb {
 
         Personne personne = new Personne();
 
+        personne.setCategorie( map( source.getCategorie() ) );
         personne.setId( source.getId() );
         personne.setNom( source.getNom() );
         personne.setPrenom( source.getPrenom() );
-        personne.setCategorie( map( source.getCategorie() ) );
         personne.setTelephones( dtoTelephoneListToTelephoneList( source.getTelephones() ) );
 
         addBackReference( personne );

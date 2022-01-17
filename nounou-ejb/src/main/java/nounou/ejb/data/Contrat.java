@@ -19,152 +19,149 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table( name = "contrat"  )
+@Table(name = "contrat")
 public class Contrat {
-	
+
 	// Champs
-	
+
 	@Id
-	@GeneratedValue( strategy = IDENTITY )
-	@Column( name = "idcontrat" )
-	private int				IdContrat;
-	
-	@ManyToOne( fetch = FetchType.LAZY )
-	@JoinColumn( name = "contrats" )
-	private int				IdParent;
-	
-	@Column( name = "nom" )
-	private String			Nom;
-	
-	@Column( name = "prenom" )
-	private String			Prenom;
-	
-	@Column( name = "datedenaissance" )
-	private Date			DateDeNaissance;
-	
-	@Column( name = "tarif" )
-	private	Float 			Tarif;
-	
-	@Column( name = "indement" )
-	private	Float 			IndemEnt;
-	
-	@Column( name = "indemrep" )
-	private	Float 			IndemRep;
-	
-	@Column( name = "actif" )
-	private	Boolean 		Actif;
-	
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "idcontrat")
+	private int IdContrat;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "contrats")
+	private Parent IdParent;
+
+	@Column(name = "nom")
+	private String Nom;
+
+	@Column(name = "prenom")
+	private String Prenom;
+
+	@Column(name = "datedenaissance")
+	private Date DateDeNaissance;
+
+	@Column(name = "tarif")
+	private Float Tarif;
+
+	@Column(name = "indement")
+	private Float IndemEnt;
+
+	@Column(name = "indemrep")
+	private Float IndemRep;
+
+	@Column(name = "actif")
+	private Boolean Actif;
+
 	// Constructors
-	
-				public Contrat() {
-					
-				}
 
-				public Contrat(int idParent, String nom, String prenom, Date dateDeNaissance, Float tarif, Float indemEnt,
-						Float indemRep, Boolean actif) {
-					super();
-					IdParent = idParent;
-					Nom = nom;
-					Prenom = prenom;
-					DateDeNaissance = dateDeNaissance;
-					Tarif = tarif;
-					IndemEnt = indemEnt;
-					IndemRep = indemRep;
-					Actif = actif;
-				}
-				
-		// Getters and Setters
-				
-				public int getIdContrat() {
-					return IdContrat;
-				}
+	public Contrat() {
 
-				public int getIdParent() {
-					return IdParent;
-				}
+	}
 
-				public void setIdParent(int idParent) {
-					IdParent = idParent;
-				}
+	public Contrat(Parent idParent, String nom, String prenom, Date dateDeNaissance, Float tarif, Float indemEnt,
+			Float indemRep, Boolean actif) {
+		super();
+		IdParent = idParent;
+		Nom = nom;
+		Prenom = prenom;
+		DateDeNaissance = dateDeNaissance;
+		Tarif = tarif;
+		IndemEnt = indemEnt;
+		IndemRep = indemRep;
+		Actif = actif;
+	}
 
-				public String getNom() {
-					return Nom;
-				}
+	// Getters and Setters
 
-				public void setNom(String nom) {
-					Nom = nom;
-				}
+	public int getIdContrat() {
+		return IdContrat;
+	}
 
-				public String getPrenom() {
-					return Prenom;
-				}
+	public Parent getIdParent() {
+		return IdParent;
+	}
 
-				public void setPrenom(String prenom) {
-					Prenom = prenom;
-				}
+	public void setIdParent(Parent idParent) {
+		IdParent = idParent;
+	}
 
-				public Date getDateDeNaissance() {
-					return DateDeNaissance;
-				}
+	public String getNom() {
+		return Nom;
+	}
 
-				public void setDateDeNaissance(Date dateDeNaissance) {
-					DateDeNaissance = dateDeNaissance;
-				}
+	public void setNom(String nom) {
+		Nom = nom;
+	}
 
-				public Float getTarif() {
-					return Tarif;
-				}
+	public String getPrenom() {
+		return Prenom;
+	}
 
-				public void setTarif(Float tarif) {
-					Tarif = tarif;
-				}
+	public void setPrenom(String prenom) {
+		Prenom = prenom;
+	}
 
-				public Float getIndemEnt() {
-					return IndemEnt;
-				}
+	public Date getDateDeNaissance() {
+		return DateDeNaissance;
+	}
 
-				public void setIndemEnt(Float indemEnt) {
-					IndemEnt = indemEnt;
-				}
+	public void setDateDeNaissance(Date dateDeNaissance) {
+		DateDeNaissance = dateDeNaissance;
+	}
 
-				public Float getIndemRep() {
-					return IndemRep;
-				}
+	public Float getTarif() {
+		return Tarif;
+	}
 
-				public void setIndemRep(Float indemRep) {
-					IndemRep = indemRep;
-				}
+	public void setTarif(Float tarif) {
+		Tarif = tarif;
+	}
 
-				public Boolean getActif() {
-					return Actif;
-				}
+	public Float getIndemEnt() {
+		return IndemEnt;
+	}
 
-				public void setActif(Boolean actif) {
-					Actif = actif;
-				}
-				
-				@Override
-				public int hashCode() {
-					return Objects.hash(Actif, DateDeNaissance, IdParent, IdContrat, IndemEnt, IndemRep, Nom, Prenom,
-							Tarif);
-				}
+	public void setIndemEnt(Float indemEnt) {
+		IndemEnt = indemEnt;
+	}
 
-				@Override
-				public boolean equals(Object obj) {
-					if (this == obj)
-						return true;
-					if (obj == null)
-						return false;
-					if (getClass() != obj.getClass())
-						return false;
-					Contrat other = (Contrat) obj;
-					return Objects.equals(Actif, other.Actif) && Objects.equals(DateDeNaissance, other.DateDeNaissance)
-							&& IdParent == other.IdParent && IdContrat == other.IdContrat
-							&& Objects.equals(IndemEnt, other.IndemEnt) && Objects.equals(IndemRep, other.IndemRep)
-							&& Objects.equals(Nom, other.Nom) && Objects.equals(Prenom, other.Prenom)
-							&& Objects.equals(Tarif, other.Tarif);
-				}
-				
-				
+	public Float getIndemRep() {
+		return IndemRep;
+	}
+
+	public void setIndemRep(Float indemRep) {
+		IndemRep = indemRep;
+	}
+
+	public Boolean getActif() {
+		return Actif;
+	}
+
+	public void setActif(Boolean actif) {
+		Actif = actif;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(Actif, DateDeNaissance, IdParent, IdContrat, IndemEnt, IndemRep, Nom, Prenom, Tarif);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contrat other = (Contrat) obj;
+		return Objects.equals(Actif, other.Actif) && Objects.equals(DateDeNaissance, other.DateDeNaissance)
+				&& IdParent == other.IdParent && IdContrat == other.IdContrat
+				&& Objects.equals(IndemEnt, other.IndemEnt) && Objects.equals(IndemRep, other.IndemRep)
+				&& Objects.equals(Nom, other.Nom) && Objects.equals(Prenom, other.Prenom)
+				&& Objects.equals(Tarif, other.Tarif);
+	}
 
 }

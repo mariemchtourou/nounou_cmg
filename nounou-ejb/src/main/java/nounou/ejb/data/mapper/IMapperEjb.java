@@ -22,6 +22,7 @@ public interface IMapperEjb {
 	static final IMapperEjb INSTANCE = Mappers.getMapper( IMapperEjb.class );
 	
 	
+	
 	// Compte
 	
 	Compte map( DtoCompte source );

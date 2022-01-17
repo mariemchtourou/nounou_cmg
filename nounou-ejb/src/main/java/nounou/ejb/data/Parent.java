@@ -34,8 +34,8 @@ public class Parent {
 	private int IdParent;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
-	private int IdCompte;
+	@JoinColumn(name = "idcompte")
+	private Compte IdCompte;
 
 	@Column(name = "nomparents")
 	private String NomParents;
@@ -68,8 +68,12 @@ public class Parent {
 		IdParent = idParent;
 	}
 
-	public int getIdCompte() {
+	public Compte getIdCompte() {
 		return IdCompte;
+	}
+
+	public void setIdCompte(Compte idCompte) {
+		IdCompte = idCompte;
 	}
 
 	public String getNomParents() {

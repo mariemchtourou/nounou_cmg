@@ -15,38 +15,38 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table( name = "garde"  )
+@Table(name = "garde")
 public class Garde {
 	// Champs
-	
+
 	@Id
-	@GeneratedValue( strategy = IDENTITY )
-	@Column( name = "idgarde" )
-	private int				IdGarde;	
-	
-	@ManyToOne( fetch = FetchType.LAZY )
-	@JoinColumn( name = "IdContrat" )
-	private int			 	IdContrat;
-	
-	@Column( name = "dategarde" )
-	private Date			DateGarde;
-	
-	@Column( name = "heurearr" )
-	private Time			HeureArr;
-	
-	@Column( name = "heuredep" )
-	private Time			HeureDep;
-	
-	@Column( name = "repas" )
-	private Boolean 		Repas;
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "idgarde")
+	private int IdGarde;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idcontrat")
+	private Contrat IdContrat;
+
+	@Column(name = "dategarde")
+	private Date DateGarde;
+
+	@Column(name = "heurearr")
+	private Time HeureArr;
+
+	@Column(name = "heuredep")
+	private Time HeureDep;
+
+	@Column(name = "repas")
+	private Boolean Repas;
 
 // Constructors
-	
+
 	public Garde() {
-		
+
 	}
-	
-	public Garde(int idContrat, Date dateGarde, Time heureArr, Time heureDep, Boolean repas) {
+
+	public Garde(Contrat idContrat, Date dateGarde, Time heureArr, Time heureDep, Boolean repas) {
 		super();
 		IdContrat = idContrat;
 		DateGarde = dateGarde;
@@ -54,18 +54,18 @@ public class Garde {
 		HeureDep = heureDep;
 		Repas = repas;
 	}
-	
+
 // Getters and Setters
-	
+
 	public int getIdGarde() {
 		return IdGarde;
 	}
 
-	public int getIdContrat() {
+	public Contrat getIdContrat() {
 		return IdContrat;
 	}
 
-	public void setIdContrat(int idContrat) {
+	public void setIdContrat(Contrat idContrat) {
 		IdContrat = idContrat;
 	}
 
@@ -99,5 +99,5 @@ public class Garde {
 
 	public void setRepas(Boolean repas) {
 		Repas = repas;
-	}	
+	}
 }

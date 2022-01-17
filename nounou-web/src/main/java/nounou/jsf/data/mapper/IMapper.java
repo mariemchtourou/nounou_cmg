@@ -19,7 +19,7 @@ import nounou.jsf.data.Telephone;
 public interface IMapper {
   
 
-	// Compte
+	// Compte 
 	
 	Compte    map( DtoCompte source );
 	

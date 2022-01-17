@@ -6,6 +6,9 @@
 		<class>nounou.ejb.data.Compte</class>
 		<class>nounou.ejb.data.Personne</class>
 		<class>nounou.ejb.data.Telephone</class>
+		<class>nounou.ejb.data.Contrat</class>
+		<class>nounou.ejb.data.Garde</class>
+		<class>nounou.ejb.data.Parent</class>
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>

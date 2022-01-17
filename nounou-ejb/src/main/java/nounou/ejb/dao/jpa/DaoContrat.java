@@ -25,9 +25,6 @@ public class DaoContrat implements IDaoContrat {
 
 	@PersistenceContext
 	private EntityManager	em;
-	@Inject
-	private Parent parent;
-	
 	
 	@Override
 	public int inserer(Contrat contrat) {

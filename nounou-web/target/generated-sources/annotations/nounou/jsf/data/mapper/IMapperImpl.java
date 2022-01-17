@@ -15,7 +15,7 @@ import nounou.jsf.data.Telephone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-11T15:28:01+0100",
+    date = "2022-01-17T12:06:48+0100",
     comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 15.0.2 (Oracle Corporation)"
 )
 @ApplicationScoped
@@ -29,10 +29,10 @@ public class IMapperImpl implements IMapper {
 
         Compte compte = new Compte();
 
-        compte.setId( source.getId() );
-        compte.setPseudo( source.getPseudo() );
-        compte.setMotDePasse( source.getMotDePasse() );
         compte.setEmail( source.getEmail() );
+        compte.setId( source.getId() );
+        compte.setMotDePasse( source.getMotDePasse() );
+        compte.setPseudo( source.getPseudo() );
         List<String> list = source.getRoles();
         if ( list != null ) {
             compte.setRoles( new ArrayList<String>( list ) );
@@ -71,10 +71,10 @@ public class IMapperImpl implements IMapper {
 
         Compte compte = new Compte();
 
-        compte.setId( source.getId() );
-        compte.setPseudo( source.getPseudo() );
-        compte.setMotDePasse( source.getMotDePasse() );
         compte.setEmail( source.getEmail() );
+        compte.setId( source.getId() );
+        compte.setMotDePasse( source.getMotDePasse() );
+        compte.setPseudo( source.getPseudo() );
         List<String> list = source.getRoles();
         if ( list != null ) {
             compte.setRoles( new ArrayList<String>( list ) );
@@ -89,10 +89,10 @@ public class IMapperImpl implements IMapper {
             return null;
         }
 
-        target.setId( source.getId() );
-        target.setPseudo( source.getPseudo() );
-        target.setMotDePasse( source.getMotDePasse() );
         target.setEmail( source.getEmail() );
+        target.setId( source.getId() );
+        target.setMotDePasse( source.getMotDePasse() );
+        target.setPseudo( source.getPseudo() );
         if ( target.getRoles() != null ) {
             List<String> list = source.getRoles();
             if ( list != null ) {
@@ -165,10 +165,10 @@ public class IMapperImpl implements IMapper {
 
         Personne personne = new Personne();
 
+        personne.setCategorie( map( source.getCategorie() ) );
         personne.setId( source.getId() );
         personne.setNom( source.getNom() );
         personne.setPrenom( source.getPrenom() );
-        personne.setCategorie( map( source.getCategorie() ) );
         personne.setTelephones( dtoTelephoneListToTelephoneList( source.getTelephones() ) );
 
         return personne;
@@ -201,10 +201,10 @@ public class IMapperImpl implements IMapper {
 
         Personne personne = new Personne();
 
+        personne.setCategorie( duplicate( source.getCategorie() ) );
         personne.setId( source.getId() );
         personne.setNom( source.getNom() );
         personne.setPrenom( source.getPrenom() );
-        personne.setCategorie( duplicate( source.getCategorie() ) );
         personne.setTelephones( duplicate( source.getTelephones() ) );
 
         return personne;
