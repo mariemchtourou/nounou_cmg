@@ -19,7 +19,7 @@ import nounou.ejb.data.Telephone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-17T15:15:55+0100",
+    date = "2022-01-17T16:22:27+0100",
     comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 15.0.2 (Oracle Corporation)"
 )
 @ApplicationScoped
@@ -181,6 +181,46 @@ public class IMapperEjbImpl implements IMapperEjb {
     }
 
     @Override
+    public Contrat map(DtoContrat source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        Contrat contrat = new Contrat();
+
+        contrat.setActif( source.getActif() );
+        contrat.setDateDeNaissance( source.getDateDeNaissance() );
+        contrat.setIdParent( map( source.getIdParent() ) );
+        contrat.setIndemEnt( source.getIndemEnt() );
+        contrat.setIndemRep( source.getIndemRep() );
+        contrat.setNom( source.getNom() );
+        contrat.setPrenom( source.getPrenom() );
+        contrat.setTarif( source.getTarif() );
+
+        return contrat;
+    }
+
+    @Override
+    public DtoContrat map(Contrat source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        DtoContrat dtoContrat = new DtoContrat();
+
+        dtoContrat.setActif( source.getActif() );
+        dtoContrat.setDateDeNaissance( source.getDateDeNaissance() );
+        dtoContrat.setIdParent( map( source.getIdParent() ) );
+        dtoContrat.setIndemEnt( source.getIndemEnt() );
+        dtoContrat.setIndemRep( source.getIndemRep() );
+        dtoContrat.setNom( source.getNom() );
+        dtoContrat.setPrenom( source.getPrenom() );
+        dtoContrat.setTarif( source.getTarif() );
+
+        return dtoContrat;
+    }
+
+    @Override
     public Telephone map(DtoTelephone source) {
         if ( source == null ) {
             return null;
@@ -210,25 +250,6 @@ public class IMapperEjbImpl implements IMapperEjb {
         return dtoTelephone;
     }
 
-    protected Contrat dtoContratToContrat(DtoContrat dtoContrat) {
-        if ( dtoContrat == null ) {
-            return null;
-        }
-
-        Contrat contrat = new Contrat();
-
-        contrat.setActif( dtoContrat.getActif() );
-        contrat.setDateDeNaissance( dtoContrat.getDateDeNaissance() );
-        contrat.setIdParent( map( dtoContrat.getIdParent() ) );
-        contrat.setIndemEnt( dtoContrat.getIndemEnt() );
-        contrat.setIndemRep( dtoContrat.getIndemRep() );
-        contrat.setNom( dtoContrat.getNom() );
-        contrat.setPrenom( dtoContrat.getPrenom() );
-        contrat.setTarif( dtoContrat.getTarif() );
-
-        return contrat;
-    }
-
     protected List<Contrat> dtoContratListToContratList(List<DtoContrat> list) {
         if ( list == null ) {
             return null;
@@ -236,29 +257,10 @@ public class IMapperEjbImpl implements IMapperEjb {
 
         List<Contrat> list1 = new ArrayList<Contrat>( list.size() );
         for ( DtoContrat dtoContrat : list ) {
-            list1.add( dtoContratToContrat( dtoContrat ) );
+            list1.add( map( dtoContrat ) );
         }
 
         return list1;
-    }
-
-    protected DtoContrat contratToDtoContrat(Contrat contrat) {
-        if ( contrat == null ) {
-            return null;
-        }
-
-        DtoContrat dtoContrat = new DtoContrat();
-
-        dtoContrat.setActif( contrat.getActif() );
-        dtoContrat.setDateDeNaissance( contrat.getDateDeNaissance() );
-        dtoContrat.setIdParent( map( contrat.getIdParent() ) );
-        dtoContrat.setIndemEnt( contrat.getIndemEnt() );
-        dtoContrat.setIndemRep( contrat.getIndemRep() );
-        dtoContrat.setNom( contrat.getNom() );
-        dtoContrat.setPrenom( contrat.getPrenom() );
-        dtoContrat.setTarif( contrat.getTarif() );
-
-        return dtoContrat;
     }
 
     protected List<DtoContrat> contratListToDtoContratList(List<Contrat> list) {
@@ -268,7 +270,7 @@ public class IMapperEjbImpl implements IMapperEjb {
 
         List<DtoContrat> list1 = new ArrayList<DtoContrat>( list.size() );
         for ( Contrat contrat : list ) {
-            list1.add( contratToDtoContrat( contrat ) );
+            list1.add( map( contrat ) );
         }
 
         return list1;

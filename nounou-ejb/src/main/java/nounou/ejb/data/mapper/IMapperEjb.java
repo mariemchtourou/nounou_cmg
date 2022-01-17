@@ -8,20 +8,14 @@ import org.mapstruct.factory.Mappers;
 
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
-<<<<<<< HEAD
 import nounou.commun.dto.DtoContrat;
-=======
 import nounou.commun.dto.DtoParent;
->>>>>>> branch 'master' of https://github.com/mariemchtourou/nounou_cmg.git
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.ejb.data.Categorie;
 import nounou.ejb.data.Compte;
-<<<<<<< HEAD
 import nounou.ejb.data.Contrat;
-=======
 import nounou.ejb.data.Parent;
->>>>>>> branch 'master' of https://github.com/mariemchtourou/nounou_cmg.git
 import nounou.ejb.data.Personne;
 import nounou.ejb.data.Telephone;
 
@@ -36,7 +30,6 @@ public interface IMapperEjb {
 	Parent map( DtoParent Parent );
 	
 	DtoParent map( Parent source ); 
-	
 	
 	// Compte
 	
@@ -62,18 +55,12 @@ public interface IMapperEjb {
 	@Mapping( target="telephones", ignore = true )
 	DtoPersonne mapMinimal( Personne source );
 	
-<<<<<<< HEAD
 	//Contrat
 	
 	Contrat map( DtoContrat source );
 	
 	DtoContrat map( Contrat source);
-	
-	@Mapping( target="IdParent", ignore = true )
-	DtoContrat mapMinimal( Contrat source );
-	
-=======
->>>>>>> branch 'master' of https://github.com/mariemchtourou/nounou_cmg.git
+
 	// Telephone
 	
 	@Mapping( target="personne", ignore=true )

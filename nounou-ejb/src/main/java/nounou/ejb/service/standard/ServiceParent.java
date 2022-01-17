@@ -3,6 +3,7 @@ package nounou.ejb.service.standard;
 import static nounou.commun.dto.Roles.ADMINISTRATEUR;
 import static nounou.commun.dto.Roles.UTILISATEUR;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Remote;
@@ -12,6 +13,7 @@ import nounou.commun.dto.DtoParent;
 import nounou.commun.exception.ExceptionValidation;
 import nounou.commun.service.IServiceParent;
 import nounou.ejb.dao.IDaoParent;
+import nounou.ejb.data.Parent;
 import nounou.ejb.data.mapper.IMapperEjb;
 
 @Stateless
@@ -33,23 +35,29 @@ public class ServiceParent implements IServiceParent {
 	}
 
 	@Override
-	public void modifier(DtoParent Parent) throws ExceptionValidation {
-
+	public void modifier(DtoParent dtoParent) throws ExceptionValidation {
+		verifierValiditeDonnees(dtoParent);
+		daoParent.modifier(mapper.map(dtoParent));
 	}
 
 	@Override
 	public void supprimer(int idParent) throws ExceptionValidation {
-
+		daoParent.supprimer(idParent);
 	}
 
 	@Override
 	public DtoParent retrouver(int idParent) {
-		return null;
+		Parent parent = daoParent.retrouver(idParent);
+		return mapper.map(parent);
 	}
 
 	@Override
 	public List<DtoParent> listerTout() {
-		return null;
+		List<DtoParent> liste = new ArrayList<>();
+		for (Parent parent : daoParent.listerTout()) {
+			liste.add( mapper.map(parent) );
+		}
+		return liste;
 	}
 
 	// Méthodes auxiliaires

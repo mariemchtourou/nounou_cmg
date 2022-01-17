@@ -14,11 +14,13 @@ import javax.ejb.TransactionAttribute;
 import javax.inject.Inject;
 
 import nounou.commun.dto.DtoContrat;
+import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoTelephone;
 import nounou.commun.exception.ExceptionValidation;
 import nounou.commun.service.IServiceContrat;
 import nounou.ejb.dao.IDaoContrat;
 import nounou.ejb.data.Contrat;
+import nounou.ejb.data.Parent;
 import nounou.ejb.data.Personne;
 import nounou.ejb.data.mapper.IMapperEjb;
 
@@ -61,10 +63,10 @@ public class ServiceContrat implements IServiceContrat {
 
 	@Override
 	@TransactionAttribute(NOT_SUPPORTED)
-	public List<DtoContrat> listerParParents(DtoContrat parent) {
+	public List<DtoContrat> listerParParents(DtoParent parent) {
 		List<DtoContrat> liste = new ArrayList<>();
-		for (Contrat contrat : daoContrat.listerParParents()) {
-			liste.add( mapper.mapMinimal(contrat) );
+		for (Contrat contrat : daoContrat.listerParParents(mapper.map(parent))) {
+			liste.add( mapper.map(contrat) );
 		}
 		return liste;
 	}
@@ -74,7 +76,7 @@ public class ServiceContrat implements IServiceContrat {
 	public List<DtoContrat> listerTout() {
 		List<DtoContrat> liste = new ArrayList<>();
 		for (Contrat contrat : daoContrat.listerTout()) {
-			liste.add( mapper.mapMinimal(contrat) );
+			liste.add( mapper.map(contrat) );
 		}
 		return liste;
 	}
@@ -98,7 +100,7 @@ public class ServiceContrat implements IServiceContrat {
 			}
 			
 			if (dtoContrat.getDateDeNaissance() == null ) {
-				message.append("\nLa date de naissance est absent.");
+				message.append("\nLa date de naissance est absente.");
 			}
 			if (dtoContrat.getTarif() == null ) {
 				message.append("\nLe tarif est absent.");
@@ -106,14 +108,14 @@ public class ServiceContrat implements IServiceContrat {
 				message.append("\nLe Tarif est invalide.");
 			}
 			if (dtoContrat.getIndemEnt() == null ) {
-				message.append("\nLe Indemnités d’entretien est absent.");
+				message.append("\nLes Indemnités d’entretien sont absents.");
 			}else if (dtoContrat.getTarif() < 0) {
-				message.append("\nLe Indemnités d’entretien est invalide.");
+				message.append("\nLes Indemnités d’entretien sont invalides.");
 			}
 			if (dtoContrat.getIndemEnt() == null ) {
-				message.append("\nLe Indemnités de repas est absent.");
+				message.append("\nLes Indemnités de repas sont absents.");
 			}else if (dtoContrat.getTarif() < 0) {
-				message.append("\nLe Indemnités de repas est invalide.");
+				message.append("\nLes Indemnités de repas sont invalides.");
 			}
 			if (message.length() > 0) {
 				throw new ExceptionValidation(message.toString().substring(1));

@@ -3,6 +3,7 @@ package nounou.commun.service;
 import java.util.List;
 
 import nounou.commun.dto.DtoContrat;
+import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.exception.ExceptionValidation;
 
@@ -17,7 +18,7 @@ public interface IServiceContrat {
 
 	DtoContrat 	retrouver( int idContrat );
 	
-	List<DtoContrat> listerParParents(DtoContrat parent);
+	List<DtoContrat> listerParParents(DtoParent parent);
 
 	List<DtoContrat> listerTout();
 	
