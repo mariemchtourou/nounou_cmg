@@ -4,14 +4,11 @@ import static nounou.commun.dto.Roles.ADMINISTRATEUR;
 import static nounou.commun.dto.Roles.UTILISATEUR;
 
 import java.util.List;
-
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-
 import nounou.commun.dto.DtoParent;
-import nounou.commun.dto.DtoTelephone;
 import nounou.commun.exception.ExceptionValidation;
 import nounou.commun.service.IServiceParent;
 import nounou.ejb.dao.IDaoParent;
@@ -29,8 +26,10 @@ public class ServiceParent implements IServiceParent {
 	private IDaoParent daoParent;
 
 	@Override
-	public int inserer(DtoParent Parent) throws ExceptionValidation {
-		return 0;
+	public int inserer(DtoParent dtoParent) throws ExceptionValidation {
+		verifierValiditeDonnees(dtoParent);
+		int id = daoParent.inserer(mapper.map(dtoParent));
+		return id;
 	}
 
 	@Override

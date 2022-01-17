@@ -11,7 +11,7 @@ public class DtoGarde implements Serializable  {
 
 			private int				IdGarde;	
 			
-			private int			 	IdContrat;
+			private DtoContrat			 	IdContrat;
 			
 			private Date			DateGarde;
 			
@@ -27,7 +27,7 @@ public class DtoGarde implements Serializable  {
 				
 			}
 			
-			public DtoGarde(int idContrat, Date dateGarde, Time heureArr, Time heureDep, Boolean repas) {
+			public DtoGarde(DtoContrat idContrat, Date dateGarde, Time heureArr, Time heureDep, Boolean repas) {
 				super();
 				IdContrat = idContrat;
 				DateGarde = dateGarde;
@@ -42,11 +42,12 @@ public class DtoGarde implements Serializable  {
 				return IdGarde;
 			}
 
-			public int getIdContrat() {
+
+			public DtoContrat getIdContrat() {
 				return IdContrat;
 			}
 
-			public void setIdContrat(int idContrat) {
+			public void setIdContrat(DtoContrat idContrat) {
 				IdContrat = idContrat;
 			}
 

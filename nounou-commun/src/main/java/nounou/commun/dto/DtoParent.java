@@ -10,7 +10,7 @@ public class DtoParent implements Serializable {
 	// Champs
 	private int IdParent;
 
-	private int IdCompte;
+	private DtoCompte IdCompte;
 
 	private String NomParents;
 
@@ -39,8 +39,12 @@ public class DtoParent implements Serializable {
 		IdParent = idParent;
 	}
 
-	public int getIdCompte() {
+	public DtoCompte getIdCompte() {
 		return IdCompte;
+	}
+
+	public void setIdCompte(DtoCompte idCompte) {
+		IdCompte = idCompte;
 	}
 
 	public String getNomParents() {

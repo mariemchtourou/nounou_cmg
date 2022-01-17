@@ -6,16 +6,18 @@ import javax.annotation.processing.Generated;
 import javax.enterprise.context.ApplicationScoped;
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
+import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.jsf.data.Categorie;
 import nounou.jsf.data.Compte;
+import nounou.jsf.data.Parent;
 import nounou.jsf.data.Personne;
 import nounou.jsf.data.Telephone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-17T12:06:48+0100",
+    date = "2022-01-17T14:58:15+0100",
     comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 15.0.2 (Oracle Corporation)"
 )
 @ApplicationScoped
@@ -208,6 +210,50 @@ public class IMapperImpl implements IMapper {
         personne.setTelephones( duplicate( source.getTelephones() ) );
 
         return personne;
+    }
+
+    @Override
+    public Parent map(DtoParent source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        Parent parent = new Parent();
+
+        parent.setAdresse( source.getAdresse() );
+        parent.setTelephone( source.getTelephone() );
+
+        return parent;
+    }
+
+    @Override
+    public DtoParent map(Parent source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        DtoParent dtoParent = new DtoParent();
+
+        dtoParent.setAdresse( source.getAdresse() );
+        dtoParent.setTelephone( source.getTelephone() );
+
+        return dtoParent;
+    }
+
+    @Override
+    public Parent duplicate(Parent source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        Parent parent = new Parent();
+
+        parent.setAdresse( source.getAdresse() );
+        parent.setId( source.getId() );
+        parent.setNom( source.getNom() );
+        parent.setTelephone( source.getTelephone() );
+
+        return parent;
     }
 
     @Override

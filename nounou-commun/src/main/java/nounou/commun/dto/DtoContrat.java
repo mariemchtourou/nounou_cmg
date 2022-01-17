@@ -10,7 +10,7 @@ public class DtoContrat implements Serializable {
 
 	private int IdContrat;
 
-	private int IdParent;
+	private DtoParent IdParent;
 
 	private String Nom;
 
@@ -32,7 +32,7 @@ public class DtoContrat implements Serializable {
 
 	}
 
-	public DtoContrat(int idParent, String nom, String prenom, Date dateDeNaissance, Float tarif, Float indemEnt,
+	public DtoContrat(DtoParent idParent, String nom, String prenom, Date dateDeNaissance, Float tarif, Float indemEnt,
 			Float indemRep, Boolean actif) {
 		super();
 		IdParent = idParent;
@@ -51,11 +51,11 @@ public class DtoContrat implements Serializable {
 		return IdContrat;
 	}
 
-	public int getIdParent() {
+	public DtoParent getIdParent() {
 		return IdParent;
 	}
 
-	public void setIdParent(int idParent) {
+	public void setIdParent(DtoParent idParent) {
 		IdParent = idParent;
 	}
 
