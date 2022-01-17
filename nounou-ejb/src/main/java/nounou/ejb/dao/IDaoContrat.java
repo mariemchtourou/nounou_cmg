@@ -3,6 +3,7 @@ package nounou.ejb.dao;
 import java.util.List;
 
 import nounou.ejb.data.Contrat;
+import nounou.ejb.data.Parent;
 
 public interface IDaoContrat {
 
@@ -14,7 +15,7 @@ public interface IDaoContrat {
 
 	Contrat 	retrouver( int idContrat );
 	
-	List<Contrat> listerParParents();
+	List<Contrat> listerParParents(Parent parent);
 
 	List<Contrat> listerTout();
 }

@@ -8,12 +8,14 @@ import java.util.List;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import nounou.ejb.dao.IDaoContrat;
 import nounou.ejb.data.Categorie;
 import nounou.ejb.data.Contrat;
+import nounou.ejb.data.Parent;
 
 @Stateless
 @Local
@@ -23,6 +25,8 @@ public class DaoContrat implements IDaoContrat {
 
 	@PersistenceContext
 	private EntityManager	em;
+	@Inject
+	private Parent parent;
 	
 	
 	@Override
@@ -49,7 +53,7 @@ public class DaoContrat implements IDaoContrat {
 	}
 
 	@Override
-	public List<Contrat> listerParParents() {
+	public List<Contrat> listerParParents(Parent parent) {
 		return null;
 	}
 
