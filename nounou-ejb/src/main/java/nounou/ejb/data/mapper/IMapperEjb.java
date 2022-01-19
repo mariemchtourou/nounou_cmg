@@ -1,4 +1,3 @@
-[10:21] CHTOUROU Mariem
 package nounou.ejb.data.mapper;import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
