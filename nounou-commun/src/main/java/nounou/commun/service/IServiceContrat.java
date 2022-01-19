@@ -21,6 +21,8 @@ public interface IServiceContrat {
 	List<DtoContrat> listerParParents(DtoParent parent);
 
 	List<DtoContrat> listerTout();
+
+	void updateStatut(DtoContrat dtoContrat) throws ExceptionValidation;
 	
 
 }

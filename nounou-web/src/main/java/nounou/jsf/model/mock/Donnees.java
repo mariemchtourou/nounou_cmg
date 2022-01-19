@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import nounou.commun.dto.Roles;
 import nounou.jsf.data.Categorie;
 import nounou.jsf.data.Compte;
+import nounou.jsf.data.Contrat;
 import nounou.jsf.data.Parent;
 import nounou.jsf.data.Personne;
 import nounou.jsf.data.Telephone;
@@ -26,6 +27,7 @@ public class Donnees implements Serializable {
 
 	private final Map<Integer, Compte> mapComptes = new HashMap<>();
 	private final Map<Integer, Categorie> mapCategories = new HashMap<>();
+	private final Map<Integer, Contrat> mapContrats = new HashMap<>();
 	private final Map<Integer, Personne> mapPersonnes = new HashMap<>();
 	private final Map<Integer, Parent> mapParents = new HashMap<>();
 
@@ -67,6 +69,14 @@ public class Donnees implements Serializable {
 		}
 		return parents;
 	}
+	
+	public List<Contrat> getContrats() {
+		List<Contrat> contrats = new ArrayList<>();
+		for (Contrat contrat : mapContrats.values()) {
+			contrats.add(mapper.duplicate(contrat));
+		}
+		return contrats;
+	}
 
 	// Constructeur
 
@@ -97,7 +107,29 @@ public class Donnees implements Serializable {
 	public Categorie categorieRetrouver(int id) {
 		return mapper.duplicate(mapCategories.get(id));
 	}
+	
+	public int contratAjouter(Contrat categorie) {
+		Integer idMax = Collections.max(mapContrats.keySet());
+		if (idMax == null) {
+			idMax = 0;
+		}
+		categorie.setIdContrat(idMax + 1);
+		mapContrats.put(categorie.getIdContrat(), mapper.duplicate(categorie));
+		return categorie.getIdContrat();
+	}
 
+	public void contratModifier(Contrat categorie) {
+		mapContrats.replace(categorie.getIdContrat(), mapper.duplicate(categorie));
+	}
+
+	public void contratSupprimer(int id) {
+		mapContrats.remove(id);
+	}
+
+	public Contrat contratRetrouver(int id) {
+		return mapper.duplicate(mapContrats.get(id));
+	}
+	
 	public int compteAjouter(Compte compte) {
 		Integer idMax = Collections.max(mapComptes.keySet());
 		if (idMax == null) {

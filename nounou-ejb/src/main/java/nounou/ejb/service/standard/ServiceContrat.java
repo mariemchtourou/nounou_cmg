@@ -81,6 +81,14 @@ public class ServiceContrat implements IServiceContrat {
 		return liste;
 	}
 	
+	@Override
+	public void updateStatut(DtoContrat dtoContrat) throws ExceptionValidation{
+		verifierValiditeDonnees(dtoContrat);
+		daoContrat.updateStatut(mapper.map(dtoContrat));
+		
+	}
+
+	
 	// Méthodes auxiliaires
 
 		private void verifierValiditeDonnees(DtoContrat dtoContrat) throws ExceptionValidation {
@@ -121,6 +129,7 @@ public class ServiceContrat implements IServiceContrat {
 				throw new ExceptionValidation(message.toString().substring(1));
 			}
 		}
+
 
 
 }

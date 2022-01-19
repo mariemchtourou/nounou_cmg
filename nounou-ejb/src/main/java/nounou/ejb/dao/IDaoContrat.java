@@ -18,4 +18,6 @@ public interface IDaoContrat {
 	List<Contrat> listerParParents(Parent parent);
 
 	List<Contrat> listerTout();
+	
+	void		updateStatut (Contrat idContrat);
 }

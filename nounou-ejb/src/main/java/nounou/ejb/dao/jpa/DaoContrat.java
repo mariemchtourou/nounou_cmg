@@ -65,4 +65,11 @@ public class DaoContrat implements IDaoContrat {
 		return query.getResultList();
 	}
 
+	@Override
+	public void updateStatut(Contrat contrat) {
+		if(contrat.getActif()) {contrat.setActif(false);}
+		else {contrat.setActif(true);}
+		em.merge(contrat);
+	}
+
 }

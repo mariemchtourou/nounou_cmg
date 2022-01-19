@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+	 <f:metadata>
+		 <f:viewParam name="id" value="#{modelContrat.courant.idContrat}" />
+		 <f:viewAction action="#{modelContrat.actualiserCourant()}" />
+	 </f:metadata>
+
+     <ui:define name="titre">Contrat</ui:define>
+
+    <ui:define name="contenu">
+	
+	<h:form>
+	
+		<table class="form">
+			<tr>
+				<td>
+					<h:outputLabel for="id">Id :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="id" size="5" readonly="true"
+						value="#{modelContrat.courant.idContrat}" />
+					<br /><h:message for="id" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="libelle">Nom :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="libelle" size="25" 
+						value="#{modelContrat.courant.nom}" />
+					<br /><h:message for="nom" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="libelle">Prenom :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="libelle" size="25" 
+						value="#{modelContrat.courant.prenom}" />
+					<br /><h:message for="prenom" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="dateDeNaissance">Date de naissance :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="libelle" size="25" 
+						value="#{modelContrat.courant.dateDeNaissance}" />
+					<br /><h:message for="dateDeNaissance" errorClass="error"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<h:outputLabel for="parent">Parents :</h:outputLabel>				
+				</td>
+				<td>
+					<h:selectOneMenu id="parent" 
+						value="#{modelContrat.courant.idParent}" 
+						converter="#{converterGetId}">
+						<f:selectItems value="#{modelParent.liste}"  />
+					</h:selectOneMenu>
+					<br /><h:message for="parent" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:inputText id="tarif" size="5" styleClass="right"
+					value="#{modelContrat.courant.tarif}"
+					required="true" requiredMessage="Le tarif doit être indiqué"
+					validatorMessage="Le tarif ne doit pas être inférieur à zéro."
+					>
+						<f:validateBean disabled="true" />
+						<f:validateDoubleRange minimum="0" />
+						<f:convertNumber pattern="#,##0.00" />
+					</h:inputText> €
+					<br />
+					<h:message for="tarif" errorClass="error" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<h:inputText id="Indemnités d’entretien" size="5" styleClass="right"
+					value="#{modelContrat.courant.indemEnt}"
+					required="true" requiredMessage="Les Indemnités d’entretien doivent être indiqués"
+					validatorMessage="Les Indemnités d’entretien ne doivent pas être inférieur à zéro."
+					>
+						<f:validateBean disabled="true" />
+						<f:validateDoubleRange minimum="0" />
+						<f:convertNumber pattern="#,##0.00" />
+					</h:inputText> €
+					<br />
+					<h:message for="Indemnités d’entretien" errorClass="error" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<h:inputText id="Indemnités de repas" size="5" styleClass="right"
+					value="#{modelContrat.courant.indemRep}"
+					required="true" requiredMessage="Les Indemnités de repas doivent être indiqués"
+					validatorMessage="Les Indemnités de repas ne doivent pas être inférieur à un ou supérieur à 5."
+					>
+						<f:validateBean disabled="true" />
+						<f:validateDoubleRange minimum="1" maximum="5"/>
+						<f:convertNumber pattern="#,##0.00" />
+					</h:inputText> €
+					<br />
+					<h:message for="Indemnités de repas" errorClass="error" />
+				</td>
+			</tr>
+		</table>
+		
+		<br /> 
+		<h:commandButton value="Valider" 
+			action="#{modelContrat.validerMiseAJour()}" />
+		<h:button value="Retour" outcome="contrats" />
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>

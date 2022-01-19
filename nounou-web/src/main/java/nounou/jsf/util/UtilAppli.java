@@ -27,6 +27,8 @@ public class UtilAppli {
 	
 	
 	
+	
+	
 	// Evènements du cycle de vie
 	
 //	public void applicationInit( @Observes @Initialized( ApplicationScoped.class )  ServletContext serletContext ) throws SecurityException, IOException {

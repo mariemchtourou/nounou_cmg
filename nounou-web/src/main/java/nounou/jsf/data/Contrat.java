@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 public class Contrat implements Serializable {
 	// Champs
 
-		private int IdContrat;
+		private Integer IdContrat;
 
 		private Parent IdParent;
 
@@ -60,12 +60,21 @@ public class Contrat implements Serializable {
 
 		// Getters and Setters
 
-		public int getIdContrat() {
-			return IdContrat;
-		}
 
 		public Parent getIdParent() {
 			return IdParent;
+		}
+
+		public Integer getIdContrat() {
+			return IdContrat;
+		}
+
+		public void setIdContrat(Integer idContrat) {
+			IdContrat = idContrat;
+		}
+
+		public void setIdContrat(int idContrat) {
+			IdContrat = idContrat;
 		}
 
 		public void setIdParent(Parent idParent) {

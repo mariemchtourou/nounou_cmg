@@ -6,12 +6,12 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
 import nounou.commun.dto.DtoCategorie;
-import nounou.commun.dto.DtoCompte;
+import nounou.commun.dto.DtoContrat;
 import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.jsf.data.Categorie;
-import nounou.jsf.data.Compte;
+import nounou.jsf.data.Contrat;
 import nounou.jsf.data.Parent;
 import nounou.jsf.data.Personne;
 import nounou.jsf.data.Telephone;
@@ -19,17 +19,16 @@ import nounou.jsf.data.Telephone;
 
 @Mapper( componentModel = "cdi" )
 public interface IMapper {
-  
 
-	// Compte 
+	// Contrat 
 	
-	Compte    map( DtoCompte source );
+	Contrat    map( DtoContrat source );
 	
-	DtoCompte map( Compte source );
+	DtoContrat map( Contrat source );
 	
-	Compte duplicate( Compte source );
+	Contrat duplicate( Contrat source );
 
-	Compte update( @MappingTarget Compte target, Compte source );
+	Contrat update( @MappingTarget Contrat target, Contrat source );
 
 
 	// Categorie

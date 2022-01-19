@@ -65,7 +65,7 @@ public class Contrat {
 		Tarif = tarif;
 		IndemEnt = indemEnt;
 		IndemRep = indemRep;
-		Actif = actif;
+		Actif = true;
 	}
 
 	// Getters and Setters
