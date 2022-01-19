@@ -29,8 +29,13 @@
    <to-view-id>/pages/admin/parent/liste.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
+<<<<<<< HEAD
    <from-outcome>contrats</from-outcome>
    <to-view-id>/pages/admin/contrat/liste.xhtml</to-view-id>
+=======
+   <from-outcome>gardes</from-outcome>
+   <to-view-id>/pages/admin/garde/liste.xhtml</to-view-id>
+>>>>>>> branch 'master' of https://github.com/mariemchtourou/nounou_cmg.git
   </navigation-case>
  </navigation-rule>
  <application/>

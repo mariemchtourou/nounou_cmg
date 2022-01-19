@@ -7,12 +7,14 @@ import javax.enterprise.context.ApplicationScoped;
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
 import nounou.commun.dto.DtoContrat;
+import nounou.commun.dto.DtoGarde;
 import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.ejb.data.Categorie;
 import nounou.ejb.data.Compte;
 import nounou.ejb.data.Contrat;
+import nounou.ejb.data.Garde;
 import nounou.ejb.data.Parent;
 import nounou.ejb.data.Personne;
 import nounou.ejb.data.Telephone;
@@ -148,6 +150,7 @@ public class IMapperEjbImpl implements IMapperEjb {
         return personne;
     }
 
+    
     @Override
     public DtoPersonne map(Personne source) {
         if ( source == null ) {
@@ -198,6 +201,22 @@ public class IMapperEjbImpl implements IMapperEjb {
         contrat.setActif( source.getActif() );
 
         return contrat;
+    }
+    @Override
+    public DtoGarde map(Garde source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        DtoGarde dtoGarde = new DtoGarde();
+
+        dtoGarde.setIdContrat( map( source.getIdContrat() ) );
+        dtoGarde.setDateGarde( source.getDateGarde() );
+        dtoGarde.setHeureArr( source.getHeureArr() );
+        dtoGarde.setHeureDep( source.getHeureDep() );
+        dtoGarde.setRepas( source.getRepas() );
+
+        return dtoGarde;
     }
 
     @Override

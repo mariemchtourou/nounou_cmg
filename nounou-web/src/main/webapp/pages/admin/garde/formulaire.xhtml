@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{modelGarde.courant.id}" />
+		<f:viewAction action="#{modelGarde.actualiserCourant()}" />
+	</f:metadata>
+
+    <ui:define name="titre">Garde</ui:define>
+
+    <ui:define name="contenu">
+	
+	<h:form>
+		<table class="form">
+			<tr>
+				<td>
+					<h:outputLabel for="id">Id des parents :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="id" size="5" readonly="true"
+						value="#{modelGarde.courant.id}" />
+					<br /><h:message for="id" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="idGarde">Id Garde :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="id" size="5" readonly="true"
+						value="#{modelGarde.courant.idGarde}" />
+					<br /><h:message for="idGarde" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="repas">Repas ou non :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="repas" size="25" 
+						value="#{modelGarde.courant.repas}" />
+					<br /><h:message for="repas" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="dateGarde">Date de la garde :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="dateGarde" size="25" 
+						value="#{modelGarde.courant.dateGarde}" />
+					<br /><h:message for="dateGarde" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="heureArr">Heure d'arrivée :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="heureArr" size="25" 
+						value="#{modelGarde.courant.heureArr}" />
+					<br /><h:message for="heureArr" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="heureDep">Heure de départ :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="heureDep" size="25" 
+						value="#{modelGarde.courant.heureDep}" />
+					<br /><h:message for="heureDep" errorClass="error"/>
+				</td>
+			</tr>
+		</table>
+		
+		<h:commandButton value="Valider" 
+			action="#{modelGarde.validerMiseAJour()}">
+		</h:commandButton>
+		<h:button value="Retour" outcome="gardes" />
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>
