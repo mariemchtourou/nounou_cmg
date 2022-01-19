@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import nounou.commun.dto.Roles;
 import nounou.jsf.data.Categorie;
 import nounou.jsf.data.Compte;
+import nounou.jsf.data.Garde;
 import nounou.jsf.data.Parent;
 import nounou.jsf.data.Personne;
 import nounou.jsf.data.Telephone;
@@ -27,6 +28,7 @@ public class Donnees implements Serializable {
 	private final Map<Integer, Compte> mapComptes = new HashMap<>();
 	private final Map<Integer, Categorie> mapCategories = new HashMap<>();
 	private final Map<Integer, Personne> mapPersonnes = new HashMap<>();
+	private final Map<Integer, Garde> mapGardes = new HashMap<>();
 	private final Map<Integer, Parent> mapParents = new HashMap<>();
 
 	private int dernierIdTelephone;
@@ -58,6 +60,14 @@ public class Donnees implements Serializable {
 			personnes.add(mapper.duplicate(personne));
 		}
 		return personnes;
+	}
+	
+	public List<Garde> getGardes() {
+		List<Garde> gardes = new ArrayList<>();
+		for (Garde garde : mapGardes.values()) {
+			gardes.add(mapper.duplicate(garde));
+		}
+		return gardes;
 	}
 
 	public List<Parent> getParents() {
@@ -141,6 +151,28 @@ public class Donnees implements Serializable {
 
 	public Personne personneRetrouver(int id) {
 		return mapper.duplicate(mapPersonnes.get(id));
+	}
+	
+	public int gardeAjouter(Garde garde) {
+		Integer idMax = Collections.max(mapGardes.keySet());
+		if (idMax == null) {
+			idMax = 0;
+		}
+		garde.setId(idMax + 1);
+		mapGardes.put(garde.getId(), mapper.duplicate(garde));
+		return garde.getId();
+	}
+
+	public void gardeModifier(Garde garde) {
+		mapGardes.replace(garde.getId(), mapper.duplicate(garde));
+	}
+
+	public void gardeSupprimer(int id) {
+		mapGardes.remove(id);
+	}
+
+	public Garde gardeRetrouver(int id) {
+		return mapper.duplicate(mapGardes.get(id));
 	}
 	
 	public int parentAjouter(Parent parent) {
