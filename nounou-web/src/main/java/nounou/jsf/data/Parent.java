@@ -1,5 +1,7 @@
 package nounou.jsf.data;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.validation.constraints.NotBlank;
@@ -24,6 +26,9 @@ public class Parent {
 	@Size(max=300, message = "Valeur trop longue pour l'adresse : 300 car. maxi" )
 	private String		adresse;
 
+	private List<Contrat>	contrats = new ArrayList<>();
+
+	
 	public Integer getId() {
 		return id;
 	}
@@ -54,6 +59,14 @@ public class Parent {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+
+	public List<Contrat> getContrats() {
+		return contrats;
+	}
+
+	public void setContrats(List<Contrat> contrats) {
+		this.contrats = contrats;
 	}
 
 	@Override

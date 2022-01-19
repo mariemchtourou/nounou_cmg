@@ -19,7 +19,7 @@ import nounou.ejb.data.Telephone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-17T16:22:27+0100",
+    date = "2022-01-19T12:44:02+0100",
     comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 15.0.2 (Oracle Corporation)"
 )
 @ApplicationScoped
@@ -188,14 +188,14 @@ public class IMapperEjbImpl implements IMapperEjb {
 
         Contrat contrat = new Contrat();
 
-        contrat.setActif( source.getActif() );
-        contrat.setDateDeNaissance( source.getDateDeNaissance() );
         contrat.setIdParent( map( source.getIdParent() ) );
-        contrat.setIndemEnt( source.getIndemEnt() );
-        contrat.setIndemRep( source.getIndemRep() );
         contrat.setNom( source.getNom() );
         contrat.setPrenom( source.getPrenom() );
+        contrat.setDateDeNaissance( source.getDateDeNaissance() );
         contrat.setTarif( source.getTarif() );
+        contrat.setIndemEnt( source.getIndemEnt() );
+        contrat.setIndemRep( source.getIndemRep() );
+        contrat.setActif( source.getActif() );
 
         return contrat;
     }

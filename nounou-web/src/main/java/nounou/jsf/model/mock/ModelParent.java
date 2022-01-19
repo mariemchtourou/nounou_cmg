@@ -50,7 +50,7 @@ public class ModelParent implements Serializable {
 		if ( courant != null ) {
 			courant = données.parentRetrouver( courant.getId() );
 			if ( courant == null ) {
-				UtilJsf.messageError( "Le parent demandée n'existe pas" );
+				UtilJsf.messageError( "Le parent demandé n'existe pas" );
 				return "liste";
 			}
 		}

@@ -51,7 +51,7 @@ public class DaoParent implements IDaoParent {
 	@TransactionAttribute(NOT_SUPPORTED)
 	public List<Parent> listerTout() {
 		em.clear();
-		var jpql = "SELECT p FROM Parent p ORDER BY p.nomParents";
+		var jpql = "SELECT p FROM Parent p ORDER BY p.NomParents";
 		var query = em.createQuery(jpql, Parent.class);
 		return query.getResultList();
 	}
